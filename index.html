@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/styles.css" rel="stylesheet" />
+    <link href="styles/prism.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>HTML/CSS animations playground and showcase.</h1>
+    <h2>Transitions</h2>
+    <h3>Using Transitions</h3>
+    <button onclick="createArray()">Crear un Array y llenarlo</button> 
+    Transition applied to button properties
+    <div class='flexContainer'>
+      <div class="animationContainer buttonsContainer">
+        <button class="transformElement buttonColor">Hover me (color change)</button> 
+        <button class="transformElement buttonBorder">Hover me (borders change)</button> 
+        <button class="transformElement buttonScale">Hover me (transform scale)</button> 
+        <button class="transformElement button">Hover me (transform position)</button> 
+        <button class="transformElement button">Hover me (multiple transformations)</button> 
+        <button class="transformElement button">Hover me (visibility)</button> 
+      </div>
+      <pre><code class="language-javascript">
+        // procurar usar let cuando se va a modificar un array posteriormente
+        let emptyArray = ["primer valor"];
+        emptyArray[1] = "2 valor";
+        emptyArray[2] = 3 + " valor"; // se pueden agregar operaciones cuando se crean campos de arrays
+        emptyArray[5] = "cuarto valor"; // si me salto indices se crean espacios vacios en el array
+        console.log(emptyArray);
+        // output :
+        // ['primer valor', '2 valor', '3 valor', empty × 2, 'cuarto valor']
+        
+        let cars = ["Saab", "Volvo", "BMW"];
+        console.log(cars);
+        cars = ["Toyota", "Volvo", "Audi"]; // GOOD
+        console.log(cars);
+      </code></pre>
+    </div>
+
+    <h2>Bibliografia</h2>
+    <section class="linksSection">
+      <ul>
+        <li>
+          <a
+            target="_blank"
+            rel="noindex nofollow noopener noreferrer"
+            href="https://es.wikipedia.org/wiki/ECMAScript"
+            title="Wikipedia ECMAscript"
+            >Wikipedia ECMAscript</a
+          >
+        </li>
+      </ul>
+    </section>
+    <br />
+    <hr />
+    <footer>
+      <b> Page made by Andrés Felipe Jaimes Sánchez for HUGE Foocamp </b>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/prism.js"></script>
+  </body>
+</html>

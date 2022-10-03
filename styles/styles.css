@@ -1,0 +1,97 @@
+body {
+  font-family: "Fira Code", monospace;
+  background-color: black;
+  color: white;
+}
+
+pre {
+  font-family: "Fira Code", monospace !important;
+}
+
+button {
+  font-family: "Fira Code", monospace;
+  background-color: #f9008e;
+  color: white;
+  border: 0;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 8px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  background-color: #af0264;
+}
+
+.linksSection {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #f9008e;
+}
+
+a:visited {
+  color: #ff91d0;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.animationContainer {
+  background-color: white;
+  color: black;
+  margin: 0.5em 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.transformElement {
+  transition: all 1s linear;
+}
+
+.buttonColor {
+  background-color: #f9008e;
+}
+.buttonColor:hover {
+  background-color: #00a940;
+}
+
+.buttonBorder {
+  border: solid black 0;
+}
+.buttonBorder:hover {
+  border-radius: 50%;
+  border: solid black 5px;
+}
+
+.buttonScale:hover{
+  transform: scale(1.5);
+}
+
+@media (max-width: 1080px) {
+  .flexContainer {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1080px) {
+  .flexContainer > div,
+  .flexContainer > pre {
+    width: 50%;
+  }
+}

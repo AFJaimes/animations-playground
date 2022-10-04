@@ -355,7 +355,7 @@ a:visited {
   20% {
     opacity: 1;
     clip-path: circle(0% at 33% 35%);
-    filter: invert(1)
+    filter: invert(1);
   }
   40%,
   100% {
@@ -364,6 +364,88 @@ a:visited {
     opacity: 1;
   }
 }
+
+/* circle transition day night */
+.circleContainer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #99ebee;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: rgba(0, 64, 148, 0.35) 0px 5px 15px;
+  transition: all 1s ease-out;
+}
+
+.circleContainer > img {
+  position: absolute;
+  transition: all 1s ease-out;
+}
+
+.sun {
+  fill: #fbff1b;
+  width: 60px;
+  animation: rotateSun 10s linear infinite;
+  filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 0px 5px);
+  top: 20px;
+  left: 50px;
+}
+.moon{
+  width: 40px;
+  transform: translate(220px, 150px);
+}
+.cloud {
+  filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 0px 5px);
+  width: 60px;
+  transform: translate(90px, 50px);
+}
+.stars {
+  width: 250%;
+  animation: rotateSun 10s linear infinite;
+  opacity: 0;
+  transform-origin: 100px 100px;
+}
+
+.mountains{
+  width: 100%;
+  transform: translate(0px, 70px);
+  filter: contrast(1);
+}
+.circleContainer:hover {
+  background-color: #160a36;
+  box-shadow: rgba(57, 26, 170, 0.35) 0px 5px 15px;
+}
+.circleContainer:hover > .stars {
+  opacity: 1;
+}
+.circleContainer:hover > .sun {
+  top: 220px;
+  left: 80px;
+}
+
+.circleContainer:hover > .mountains {
+  filter: contrast(0.5);
+
+}
+
+.circleContainer:hover > .cloud {
+  transform: translate(200px, 50px);
+}
+
+.circleContainer:hover > .moon {
+  transform: translate(90px, 40px);
+}
+
+@keyframes rotateSun {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- */
 
 @media (max-width: 1080px) {
   .flexContainer {

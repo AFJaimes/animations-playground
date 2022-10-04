@@ -10,37 +10,93 @@
     <link href="styles/styles.css" rel="stylesheet" />
     <link href="styles/prism.css" rel="stylesheet" />
   </head>
-  <body>
+  <br>
     <h1>HTML/CSS animations playground and showcase.</h1>
     <h2>Transitions</h2>
     <h3>Using Transitions</h3>
-    <button onclick="createArray()">Crear un Array y llenarlo</button> 
     Transition applied to button properties
     <div class='flexContainer'>
       <div class="animationContainer buttonsContainer">
         <button class="transformElement buttonColor">Hover me (color change)</button> 
         <button class="transformElement buttonBorder">Hover me (borders change)</button> 
         <button class="transformElement buttonScale">Hover me (transform scale)</button> 
-        <button class="transformElement button">Hover me (transform position)</button> 
-        <button class="transformElement button">Hover me (multiple transformations)</button> 
-        <button class="transformElement button">Hover me (visibility)</button> 
+        <button class="transformElement buttonTransform">Hover me (transform position)</button> 
+        <button class="transformElement buttonMultiTransform">Hover me (multiple transformations)</button> 
+        <button class="transformElement buttonVisibility" onclick="alert('button clicked')">Hover me (visibility)</button> 
       </div>
-      <pre><code class="language-javascript">
-        // procurar usar let cuando se va a modificar un array posteriormente
-        let emptyArray = ["primer valor"];
-        emptyArray[1] = "2 valor";
-        emptyArray[2] = 3 + " valor"; // se pueden agregar operaciones cuando se crean campos de arrays
-        emptyArray[5] = "cuarto valor"; // si me salto indices se crean espacios vacios en el array
-        console.log(emptyArray);
-        // output :
-        // ['primer valor', '2 valor', '3 valor', empty × 2, 'cuarto valor']
-        
-        let cars = ["Saab", "Volvo", "BMW"];
-        console.log(cars);
-        cars = ["Toyota", "Volvo", "Audi"]; // GOOD
-        console.log(cars);
+      <pre><code class="language-css">
+  .transformElement {
+    transition: all 1s linear;
+  }
+
+  /* Example of button color change */
+  .buttonColor {
+    background-color: #f9008e;
+  }
+  .buttonColor:hover {
+    background-color: #00a940;
+  }
       </code></pre>
     </div>
+  </br>
+    You can specify transitions for individual properties
+    <div class='flexContainer'>
+      <div class="animationContainer buttonsContainer">
+        <button class="multiTransformElement buttonColor buttonFlip">Hover me (bg 1s ease-out & flip effect after that 1s ease-in)</button> 
+      </div>
+      <pre><code class="language-css">
+  .multiTransformElement{
+    transition: background-color, transform;
+    transition-duration: 1s, 0.5s;
+    transition-delay: 500ms, 1s;
+    transition-timing-function: ease-out, ease-in;
+    }
+    
+    .buttonFlip:hover{
+      transform: rotateY(180deg) rotateX(180deg);
+    }
+
+    .buttonColor:hover {
+    background-color: #00a940;
+  }
+      </code></pre>
+    </div>
+
+  </br>
+  Transitions can have different timings and you can activate use Javascript to play with them
+  </br>
+  <button onclick="ActivateTransitions()">Activate</button> 
+  <button onclick="DeactivateTransitions()">Deactivate</button> 
+  <div class='flexContainer'>
+    <div class="animationContainer buttonsContainer">
+      <div class="transformDiv buttonBasicTransform timingLinear">I'm a div</br> linear</div>
+      <div class="transformDiv buttonBasicTransform timingEase">I'm a div</br>ease</div>
+      <div class="transformDiv buttonBasicTransform timingEaseIn">I'm a div</br>ease-in</div>
+      <div class="transformDiv buttonBasicTransform timingEaseOut">I'm a div</br>ease-out</div>
+      <div class="transformDiv buttonBasicTransform timingInOut">I'm a div</br>ease-in-out</div>
+      <div class="transformDiv buttonBasicTransform timingStepStart">I'm a div</br>step-start</div>
+      <div class="transformDiv buttonBasicTransform timingStepEnd">I'm a div</br>step-end</div>
+      <div class="transformDiv buttonBasicTransform timingSteps">I'm a div</br>steps(10)</div>
+      <div class="transformDiv buttonBasicTransform timingStepsStart">I'm a div</br>steps(10, start)</div>
+      <div class="transformDiv buttonBasicTransform timingStepsEnd">I'm a div</br>steps(10, end)</div>
+      <div class="transformDiv buttonBasicTransform timingBeizer">I'm a div</br>cubic-bezier</div>
+    </div>
+    <pre><code class="language-javascript">
+  const ActivateTransitions = () => {
+    const elements = document.getElementsByClassName("transformDiv");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.add('moveDiv');
+    }
+  };
+  
+  const DeactivateTransitions = () => {
+    const elements = document.getElementsByClassName("transformDiv");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.remove('moveDiv');
+    }
+  };      
+</code></pre>
+  </div>
 
     <h2>Bibliografia</h2>
     <section class="linksSection">
@@ -49,9 +105,9 @@
           <a
             target="_blank"
             rel="noindex nofollow noopener noreferrer"
-            href="https://es.wikipedia.org/wiki/ECMAScript"
-            title="Wikipedia ECMAscript"
-            >Wikipedia ECMAscript</a
+            href="https://cubic-bezier.com/"
+            title="Cubic beizer tool"
+            >Cubic Beizer tool</a
           >
         </li>
       </ul>

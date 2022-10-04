@@ -21,6 +21,19 @@ button {
   box-shadow: 8px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+.transformDiv{
+  font-family: "Fira Code", monospace;
+  background-color: #f9008e;
+  color: white;
+  border: 0;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 8px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  max-width: 46%;
+}
+
 button:active {
   background-color: #af0264;
 }
@@ -79,8 +92,84 @@ a:visited {
   border: solid black 5px;
 }
 
-.buttonScale:hover{
+.buttonScale:hover {
   transform: scale(1.5);
+}
+
+.buttonTransform:hover {
+  transform: translate(-20px, 20px);
+}
+
+.buttonMultiTransform:hover {
+  background-color: #00a940;
+  transform: scale(2) translate(10px, 20px) rotate3d(0, 1, 0.5, 3.142rad);
+}
+
+.buttonVisibility:hover {
+  opacity: 0;
+}
+
+.multiTransformElement{
+ transition: background-color, transform;
+ transition-duration: 1s, 0.5s;
+ transition-delay: 500ms, 1s;
+ transition-timing-function: ease-out, ease-in;
+}
+
+.buttonFlip:hover{
+  transform: rotateY(180deg) rotateX(180deg);
+}
+
+.buttonBasicTransform{
+  transition: all;
+  transition-duration: 3s;
+  transform: translateX(0);
+}
+
+.moveDiv{
+  transform: translateX(100%);
+  background-color: #00a940;
+}
+
+.timingLinear{
+  transition-timing-function: linear;
+}
+
+.timingEaseOut{
+  transition-timing-function: ease-out;
+}
+
+.timingEase{
+  transition-timing-function: ease;
+}
+
+.timingEaseInOut{
+  transition-timing-function: ease-in-out;
+}
+
+.timingStepStart{
+  transition-timing-function: step-start;
+}
+
+.timingStepEnd{
+  transition-timing-function: step-end;
+}
+
+.timingStepsStart{
+  transition-timing-function: steps(5, start);
+}
+.timingStepsEnd{
+  transition-timing-function: steps(5, end);
+}
+.timingSteps{
+  transition-timing-function: steps(5);
+}
+.timingBeizer{
+  transition-timing-function: cubic-bezier(0,1.49,.34,-1.59);
+}
+
+.timingEaseIn{
+  transition-timing-function: ease-in;
 }
 
 @media (max-width: 1080px) {

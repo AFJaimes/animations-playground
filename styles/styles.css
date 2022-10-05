@@ -390,7 +390,7 @@ a:visited {
   top: 20px;
   left: 50px;
 }
-.moon{
+.moon {
   width: 40px;
   transform: translate(220px, 150px);
 }
@@ -406,7 +406,7 @@ a:visited {
   transform-origin: 100px 100px;
 }
 
-.mountains{
+.mountains {
   width: 100%;
   transform: translate(0px, 70px);
   filter: contrast(1);
@@ -425,7 +425,6 @@ a:visited {
 
 .circleContainer:hover > .mountains {
   filter: contrast(0.5);
-
 }
 
 .circleContainer:hover > .cloud {
@@ -458,4 +457,71 @@ a:visited {
   .flexContainer > pre {
     width: 50%;
   }
+}
+
+.menuContainer {
+  position: relative;
+  transition: all 1s ease-out;
+  height: 0px;
+  width: 100px;
+  padding-left: 20px;
+  padding-top: 20px;
+  border-radius: 50px;
+  height: 100px;
+
+}
+
+.roundButton {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transition: all 1s ease-out;
+  font-size: 2em;
+  position: absolute;
+}
+.primaryButton {
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+  background-color: gray;
+}
+
+.menuContainer:hover > .primaryButton {
+  transform: rotate(675deg);
+  background-color: #f9008e;
+}
+.menuContainer:hover {
+  background-color: #979797;
+  height: 550px;
+  width: 100px;
+}
+.secondaryButton {
+  opacity: 0;
+}
+
+.menuContainer:hover > .secondaryButton {
+  opacity: 1;
+}
+
+.menuContainer:hover > .button1 {
+  transform: translateY(90px);
+  background-color: #8f671d;
+}
+
+.menuContainer:hover > .button2 {
+  transform: translateY(180px);
+  background-color: #0e7e78;
+}
+
+.menuContainer:hover > .button3 {
+  transform: translateY(270px);
+  background-color: #079b40;
+}
+
+.menuContainer:hover > .button4 {
+  transform: translateY(360px);
+  background-color: #b67d02;
+}
+
+.menuContainer:hover > .button5 {
+  transform: translateY(450px);
+  background-color: #3a069b;
 }
